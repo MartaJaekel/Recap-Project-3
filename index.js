@@ -14,7 +14,8 @@ const pagination = document.querySelector('[data-js="pagination"]');
 //Searchbar
 searchBar.addEventListener("submit", (event) => {
   event.preventDefault();
-  searchQuery = document.querySelector('[data-js="search-bar__input"]').value;
+ // searchQuery = document.querySelector('[data-js="search-bar__input"]').value;
+ searchQuery = event.target.elements.query.value;
   fetchCharacters();
 });
 
