@@ -1,5 +1,7 @@
 import { CharacterCard } from "./components/CharacterCard/CharacterCard.js";
+import { buttonNext, span, navButton } from "./components/NavButton/NavButton.js";
 
+//import { navButton } from "./components/NavButton/NavButton.js";
 const cardContainer = document.querySelector('[data-js="card-container"]');
 
 const searchBarContainer = document.querySelector(
@@ -35,7 +37,7 @@ function counter1() {
 }
 
 //EventListener Button Next und Previous
-prevButton.addEventListener("click", () => {
+/*prevButton.addEventListener("click", () => {
   counter1();
 
   if (page < 1 || page > 42) {
@@ -58,7 +60,7 @@ nextButton.addEventListener("click", () => {
   fetchCharacters();
   pagination.innerHTML = `${page} / ${maxPage}`;
   return;
-});
+});*/
 
 //Render Characters Card
 
@@ -86,3 +88,22 @@ async function fetchCharacters() {
   renderCharacters(data.results);
 }
 fetchCharacters();
+/*const rusmir = `<nav class="navigation" data-js="navigation">
+<button class="button button--prev" data-js="button-prev">
+  previous
+</button>
+<span class="navigation__pagination" data-js="pagination">1 / 42</span>
+<button class="button button--next" data-js="button-next">next</button>
+</nav>
+`
+const julian = document.querySelector("body")
+julian.insertAdjacentHTML("beforeend", rusmir)*/
+function renderNavBar() {
+  const navBar = navButton();
+  navigation.append(navBar);
+  const spanElement = span();
+  navigation.append(spanElement);
+  const buttonNextElement = buttonNext();
+  navigation.append(buttonNextElement);
+}
+renderNavBar();
