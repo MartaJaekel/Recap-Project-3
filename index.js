@@ -28,7 +28,7 @@ function renderCharacters(results) {
       character.name,
       character.status,
       character.type,
-      character.id
+      character.episode.length
     );
     cardContainer.append(card);
   });
@@ -38,5 +38,7 @@ async function fetchCharacters() {
   const response = await fetch("https://rickandmortyapi.com/api/character");
   const data = await response.json();
   renderCharacters(data.results);
+  console.log(data)
+  console.log(data.results)
 }
 fetchCharacters();
