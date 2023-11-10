@@ -23,6 +23,7 @@ const maxPage = 42;
 let page = 1;
 let searchQuery = "";
 
+// Counter Functions
 function counter() {
   page++;
   return;
@@ -31,8 +32,8 @@ function counter1() {
   page--;
   return;
 }
-//const count = counter();
 
+//EventListener Button Next und Previous
 prevButton.addEventListener("click", () => {
   counter1();
 
@@ -58,6 +59,8 @@ nextButton.addEventListener("click", () => {
   return;
 });
 
+//Render Characters Card
+
 function renderCharacters(results) {
   cardContainer.innerHTML = "";
   results.forEach((character) => {
@@ -71,6 +74,8 @@ function renderCharacters(results) {
     cardContainer.append(card);
   });
 }
+
+//Fetch Function
 
 async function fetchCharacters() {
   const response = await fetch(
