@@ -1,5 +1,6 @@
 export function CharacterCard(src, name, status, type, occurrences) {
-    cardContainer.innerHTML = `
+  const card = document.createElement("li");
+  card.innerHTML = `
     <li class="card">
       <div class="card__image-container">
         <img
@@ -21,9 +22,6 @@ export function CharacterCard(src, name, status, type, occurrences) {
         </dl>
       </div>
     </li>
-`
-
-
-return cardContainer;
+`;
+  return card;
 }
-
